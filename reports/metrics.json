@@ -1,0 +1,1200 @@
+{
+  "data": {
+    "sms_total": 5171,
+    "sms_spam": 653,
+    "sms_ham": 4518,
+    "duplicates_removed_note": "Exact duplicates removed before splitting (see src/data.py).",
+    "email_available": true,
+    "email_total": 3437,
+    "indian_total": 30
+  },
+  "split": {
+    "train": 3619,
+    "validation": 776,
+    "test": 776
+  },
+  "leaderboard": [
+    {
+      "model": "Baseline: Majority class (all ham)",
+      "accuracy": 0.8737,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.1263,
+      "confusion": {
+        "tn": 678,
+        "fp": 0,
+        "fn": 98,
+        "tp": 0
+      }
+    },
+    {
+      "model": "Baseline: Keyword rules",
+      "accuracy": 0.9304,
+      "precision": 0.8793,
+      "recall": 0.5204,
+      "f1": 0.6538,
+      "roc_auc": 0.8281,
+      "pr_auc": 0.622,
+      "confusion": {
+        "tn": 671,
+        "fp": 7,
+        "fn": 47,
+        "tp": 51
+      }
+    },
+    {
+      "model": "Naive Bayes",
+      "accuracy": 0.9871,
+      "precision": 0.94,
+      "recall": 0.9592,
+      "f1": 0.9495,
+      "roc_auc": 0.9972,
+      "pr_auc": 0.9889,
+      "confusion": {
+        "tn": 672,
+        "fp": 6,
+        "fn": 4,
+        "tp": 94
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.9871,
+      "precision": 0.949,
+      "recall": 0.949,
+      "f1": 0.949,
+      "roc_auc": 0.9949,
+      "pr_auc": 0.9861,
+      "confusion": {
+        "tn": 673,
+        "fp": 5,
+        "fn": 5,
+        "tp": 93
+      }
+    },
+    {
+      "model": "Linear SVM",
+      "accuracy": 0.9884,
+      "precision": 0.9684,
+      "recall": 0.9388,
+      "f1": 0.9534,
+      "roc_auc": 0.9947,
+      "pr_auc": 0.987,
+      "confusion": {
+        "tn": 675,
+        "fp": 3,
+        "fn": 6,
+        "tp": 92
+      }
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.982,
+      "precision": 0.9884,
+      "recall": 0.8673,
+      "f1": 0.9239,
+      "roc_auc": 0.9958,
+      "pr_auc": 0.9829,
+      "confusion": {
+        "tn": 677,
+        "fp": 1,
+        "fn": 13,
+        "tp": 85
+      }
+    },
+    {
+      "model": "XGBoost",
+      "accuracy": 0.9884,
+      "precision": 0.9785,
+      "recall": 0.9286,
+      "f1": 0.9529,
+      "roc_auc": 0.9978,
+      "pr_auc": 0.9885,
+      "confusion": {
+        "tn": 676,
+        "fp": 2,
+        "fn": 7,
+        "tp": 91
+      }
+    }
+  ],
+  "cv_scores": {
+    "Naive Bayes": {
+      "cv_pr_auc": 0.974,
+      "best_params": {
+        "clf__alpha": 0.1
+      }
+    },
+    "Logistic Regression": {
+      "cv_pr_auc": 0.9653,
+      "best_params": {
+        "clf__C": 10.0
+      }
+    },
+    "Linear SVM": {
+      "cv_pr_auc": 0.9697,
+      "best_params": {
+        "clf__estimator__C": 1.0
+      }
+    },
+    "Random Forest": {
+      "cv_pr_auc": 0.9738,
+      "best_params": {
+        "clf__max_depth": 30
+      }
+    },
+    "XGBoost": {
+      "cv_pr_auc": 0.9796,
+      "best_params": {
+        "clf__max_depth": 4
+      }
+    }
+  },
+  "winner": "XGBoost",
+  "winner_cv_pr_auc": 0.9796,
+  "threshold": {
+    "threshold": 0.805,
+    "val_precision": 0.9565,
+    "val_recall": 0.898,
+    "val_f1": 0.9263,
+    "min_precision_required": 0.95,
+    "test_at_threshold": {
+      "accuracy": 0.9897,
+      "precision": 0.9891,
+      "recall": 0.9286,
+      "f1": 0.9579,
+      "roc_auc": 0.9982,
+      "pr_auc": 0.9899,
+      "confusion": {
+        "tn": 677,
+        "fp": 1,
+        "fn": 7,
+        "tp": 91
+      }
+    },
+    "test_at_0.5": {
+      "accuracy": 0.9884,
+      "precision": 0.9785,
+      "recall": 0.9286,
+      "f1": 0.9529,
+      "roc_auc": 0.9982,
+      "pr_auc": 0.9899,
+      "confusion": {
+        "tn": 676,
+        "fp": 2,
+        "fn": 7,
+        "tp": 91
+      }
+    }
+  },
+  "pr_curve_val": {
+    "thresholds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.001,
+      0.001,
+      0.001,
+      0.001,
+      0.002,
+      0.003,
+      0.004,
+      0.006,
+      0.011,
+      0.025,
+      0.097,
+      0.703,
+      0.987,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "precisions": [
+      0.1263,
+      0.1284,
+      0.1307,
+      0.133,
+      0.1354,
+      0.1378,
+      0.1404,
+      0.1431,
+      0.1458,
+      0.1487,
+      0.1519,
+      0.1551,
+      0.1583,
+      0.1617,
+      0.1653,
+      0.169,
+      0.1728,
+      0.1769,
+      0.1811,
+      0.1856,
+      0.1907,
+      0.1956,
+      0.2008,
+      0.2063,
+      0.2121,
+      0.2183,
+      0.2253,
+      0.2299,
+      0.2372,
+      0.2449,
+      0.2533,
+      0.2622,
+      0.2717,
+      0.282,
+      0.2931,
+      0.305,
+      0.318,
+      0.3322,
+      0.3477,
+      0.3647,
+      0.3849,
+      0.4059,
+      0.4292,
+      0.4554,
+      0.485,
+      0.5187,
+      0.5575,
+      0.6025,
+      0.6554,
+      0.7111,
+      0.7787,
+      0.8716,
+      0.9479,
+      0.9759,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "recalls": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9898,
+      0.9796,
+      0.9694,
+      0.9694,
+      0.9286,
+      0.8265,
+      0.7143,
+      0.5816,
+      0.449,
+      0.3061,
+      0.1633,
+      0.0102
+    ]
+  },
+  "cross_domain": {
+    "SMS -> Email": {
+      "accuracy": 0.657,
+      "precision": 0.6412,
+      "recall": 0.6016,
+      "f1": 0.6208,
+      "roc_auc": 0.6863,
+      "pr_auc": 0.5704,
+      "confusion": {
+        "tn": 1293,
+        "fp": 540,
+        "fn": 639,
+        "tp": 965
+      }
+    },
+    "Email -> Email": {
+      "accuracy": 0.9874,
+      "precision": 0.9896,
+      "recall": 0.9834,
+      "f1": 0.9865,
+      "roc_auc": 0.9988,
+      "pr_auc": 0.9988,
+      "confusion": {
+        "tn": 545,
+        "fp": 5,
+        "fn": 8,
+        "tp": 474
+      }
+    },
+    "Email -> SMS": {
+      "accuracy": 0.6082,
+      "precision": 0.2372,
+      "recall": 0.949,
+      "f1": 0.3796,
+      "roc_auc": 0.876,
+      "pr_auc": 0.4677,
+      "confusion": {
+        "tn": 379,
+        "fp": 299,
+        "fn": 5,
+        "tp": 93
+      }
+    },
+    "SMS -> SMS": {
+      "accuracy": 0.9884,
+      "precision": 0.9785,
+      "recall": 0.9286,
+      "f1": 0.9529,
+      "roc_auc": 0.9978,
+      "pr_auc": 0.9885,
+      "confusion": {
+        "tn": 676,
+        "fp": 2,
+        "fn": 7,
+        "tp": 91
+      }
+    }
+  },
+  "robustness": {
+    "leet": {
+      "n": 98,
+      "recall_at_threshold": 0.8469,
+      "recall_at_0.5": 0.9184
+    },
+    "spaced": {
+      "n": 98,
+      "recall_at_threshold": 0.8571,
+      "recall_at_0.5": 0.8776
+    },
+    "dotted": {
+      "n": 98,
+      "recall_at_threshold": 0.602,
+      "recall_at_0.5": 0.7041
+    },
+    "original_spam": {
+      "n": 98,
+      "recall_at_threshold": 0.9286,
+      "recall_at_0.5": 0.9286
+    }
+  },
+  "indian_metrics": {
+    "accuracy": 0.6667,
+    "precision": 0.6875,
+    "recall": 0.6875,
+    "f1": 0.6875,
+    "roc_auc": 0.7411,
+    "pr_auc": 0.7572,
+    "confusion": {
+      "tn": 9,
+      "fp": 5,
+      "fn": 5,
+      "tp": 11
+    }
+  },
+  "indian_details": [
+    {
+      "text": "Dear Customer, your SBI account will be BLOCKED today due to incomplete KYC. Update your KYC immediately here: bit.ly/sbi-kyc-update or your account will be sus",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.971
+    },
+    {
+      "text": "Congratulations! You have won Rs 25,00,000 in KBC Lottery 2026. To claim your prize money, pay processing fee of Rs 5,000 and WhatsApp your bank details to +91 ",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Urgent: Your HDFC credit card reward points worth Rs 8,450 will expire TODAY. Redeem now at hdfc-rewards-claim.xyz before midnight. Hurry!",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.979
+    },
+    {
+      "text": "Get instant personal loan of Rs 5 lakh at 0% interest, no documents, no CIBIL check. Approval in 5 minutes. Apply now: quickloan-india.com/apply",
+      "label": 1,
+      "predicted": 0,
+      "spam_probability": 0.116
+    },
+    {
+      "text": "Your electricity bill is overdue. Your connection will be disconnected tonight at 9 PM. To avoid disconnection pay immediately via link: ebill-pay.now/verify",
+      "label": 1,
+      "predicted": 0,
+      "spam_probability": 0.336
+    },
+    {
+      "text": "Part time job offer! Earn Rs 3,000-5,000 daily from home by just liking YouTube videos. No investment needed. Join our Telegram channel now.",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.889
+    },
+    {
+      "text": "Sir your parcel is held at customs. Pay Rs 49 clearance charge to release your delivery today: india-post-delivery.link/pay",
+      "label": 1,
+      "predicted": 0,
+      "spam_probability": 0.281
+    },
+    {
+      "text": "You have received a refund of Rs 12,999 from Income Tax Department. Click here to verify your account and receive money instantly: it-refund2026.in",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Double your money in 30 days! Invest in our guaranteed crypto scheme, 200% returns assured. Limited seats. Transfer to UPI id crypto-double@okaxis.",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.964
+    },
+    {
+      "text": "Your PhonePe account is at risk. Share the OTP sent to your mobile to verify your identity and prevent account freeze. Do not share with anyone else.",
+      "label": 1,
+      "predicted": 0,
+      "spam_probability": 0.089
+    },
+    {
+      "text": "Work from home data entry job. Salary Rs 45,000/month. Registration fee only Rs 999. Pay now and start earning from tomorrow.",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.969
+    },
+    {
+      "text": "FREE iPhone 16 Pro! You are our lucky 1,00,000th visitor. Claim your gift by paying shipping charges Rs 199 only: lucky-winner-prize.com",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Your SIM will be deactivated in 2 hours as per TRAI rules. Complete e-KYC now by calling 1800-419-XXXX from your registered number.",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Stock tip: Buy XYZ Infra today, sure shot multibagger, 500% returns in 3 months guaranteed. Join premium group @StockGuruTips.",
+      "label": 1,
+      "predicted": 0,
+      "spam_probability": 0.398
+    },
+    {
+      "text": "Dear customer your Aadhaar is linked with illegal activities. Police case registered. Press 1 to talk to cyber cell officer immediately.",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.955
+    },
+    {
+      "text": "Get Rs 500 cashback instantly! Just download our app and enter code WIN500. Offer valid for first 100 users only. Download: cashback-app-download.apk",
+      "label": 1,
+      "predicted": 1,
+      "spam_probability": 0.999
+    },
+    {
+      "text": "Hi beta, reached hostel safely? Call when you get time. Papa is asking about your exam dates.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.003
+    },
+    {
+      "text": "Your OTP for login is 482913. It is valid for 10 minutes. Please do not share it with anyone. - Team CampusPortal",
+      "label": 0,
+      "predicted": 1,
+      "spam_probability": 0.94
+    },
+    {
+      "text": "Your order #402-9182736 (Running Shoes) has been delivered. Rate your purchase on the app. Thank you for shopping with us.",
+      "label": 0,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Reminder: DBMS lab viva is tomorrow at 10 AM in Lab 3. Please bring your record file and hall ticket. - Class Representative",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.058
+    },
+    {
+      "text": "Bhai kal subah 6 baje ground pe milte hain, cricket practice hai. Ball main le aaunga, tu wickets le aana.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.0
+    },
+    {
+      "text": "Your account XX4821 has been debited with Rs 1,250.00 on 20-Oct-2026 at AMAZON PAY. Available balance Rs 8,432.10. Not you? Call bank helpline.",
+      "label": 0,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Meeting rescheduled to 3:30 PM today. Please find the updated agenda attached. Let me know if the time works for everyone.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.02
+    },
+    {
+      "text": "Happy birthday dear! Wishing you a wonderful year ahead. Party kab de raha hai?",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.0
+    },
+    {
+      "text": "The train 12951 Mumbai Rajdhani will depart from platform 4 at 17:00 hrs. Please report 30 minutes early. PNR 8642019573.",
+      "label": 0,
+      "predicted": 1,
+      "spam_probability": 0.997
+    },
+    {
+      "text": "Mummy ne kaha hai ki Sunday ko ghar aa jana, tumhare liye special khana banega. Train book kar lena time se.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.0
+    },
+    {
+      "text": "Your package with tracking ID 7829104856 is out for delivery and will arrive by 8 PM today. Please keep Rs 0 ready, it is prepaid.",
+      "label": 0,
+      "predicted": 1,
+      "spam_probability": 1.0
+    },
+    {
+      "text": "Results for Semester 5 internal assessment are published on the student portal. Check your marks and report discrepancies by Friday.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.597
+    },
+    {
+      "text": "Can you send me the notes of yesterday's operating systems lecture? I missed it because of the dentist appointment.",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.0
+    },
+    {
+      "text": "Gym membership renewal due on 1st November. Pay at the front desk to continue without interruption. - FitLife Gym",
+      "label": 0,
+      "predicted": 0,
+      "spam_probability": 0.001
+    }
+  ],
+  "errors": {
+    "false_positives": [
+      "7 wonders in My WORLD 7th You 6th Ur style 5th Ur smile 4th Ur Personality 3rd Ur Nature 2nd Ur SMS and 1st \"Ur Lovely Friendship\"... good morning dear"
+    ],
+    "false_negatives": [
+      "ringtoneking 84484",
+      "Latest News! Police station toilet stolen, cops have nothing to go on!",
+      "As a registered optin subscriber ur draw 4 \u00a3100 gift voucher will be entered on receipt of a correct ans to 80062 Whats No1 in the BBC charts",
+      "Babe: U want me dont u baby! Im nasty and have a thing 4 filthyguys. Fancy a rude time with a sexy bitch. How about we go slo n hard! Txt XXX SLO(4msgs)",
+      "In The Simpsons Movie released in July 2007 name the band that died at the start of the film? A-Green Day, B-Blue Day, C-Red Day. (Send A, B or C)",
+      "Bought one ringtone and now getting texts costing 3 pound offering more tones etc"
+    ],
+    "plain_language": "On the test set the model made 1 false-positive and 7 false-negative errors. About 14% of the missed spam messages are very short (8 words or fewer) or written like normal conversation, so they carry few classic spam signals. About 100% of the wrongly flagged real messages contain digits or codes (bank/OTP-style alerts), which look statistically similar to scam messages. This is exactly why the threshold was tuned to protect precision: losing a real message to the spam folder is worse than seeing one extra spam."
+  },
+  "top_words": {
+    "spam_words": [
+      {
+        "word": "call phonetoken",
+        "weight": 5.399
+      },
+      {
+        "word": "claim",
+        "weight": 5.308
+      },
+      {
+        "word": "phonetoken",
+        "weight": 5.207
+      },
+      {
+        "word": "prize",
+        "weight": 5.201
+      },
+      {
+        "word": "box numtoken",
+        "weight": 4.652
+      },
+      {
+        "word": "urltoken",
+        "weight": 4.652
+      },
+      {
+        "word": "tone",
+        "weight": 4.652
+      },
+      {
+        "word": "have won",
+        "weight": 4.627
+      },
+      {
+        "word": "numtoken cash",
+        "weight": 4.602
+      },
+      {
+        "word": "your mobile",
+        "weight": 4.602
+      },
+      {
+        "word": "phonetoken now",
+        "weight": 4.522
+      },
+      {
+        "word": "on phonetoken",
+        "weight": 4.522
+      },
+      {
+        "word": "numtoken prize",
+        "weight": 4.494
+      },
+      {
+        "word": "guaranteed",
+        "weight": 4.465
+      },
+      {
+        "word": "to claim",
+        "weight": 4.435
+      }
+    ],
+    "ham_words": [
+      {
+        "word": "gt",
+        "weight": -4.583
+      },
+      {
+        "word": "lt",
+        "weight": -4.575
+      },
+      {
+        "word": "lt gt",
+        "weight": -4.46
+      },
+      {
+        "word": "he",
+        "weight": -4.324
+      },
+      {
+        "word": "lor",
+        "weight": -4.045
+      },
+      {
+        "word": "she",
+        "weight": -3.866
+      },
+      {
+        "word": "later",
+        "weight": -3.539
+      },
+      {
+        "word": "ask",
+        "weight": -3.418
+      },
+      {
+        "word": "but",
+        "weight": -3.346
+      },
+      {
+        "word": "really",
+        "weight": -3.338
+      },
+      {
+        "word": "say",
+        "weight": -3.324
+      },
+      {
+        "word": "doing",
+        "weight": -3.31
+      },
+      {
+        "word": "cos",
+        "weight": -3.296
+      },
+      {
+        "word": "anything",
+        "weight": -3.281
+      },
+      {
+        "word": "home",
+        "weight": -3.266
+      }
+    ],
+    "source": "training-data log-odds (tree model has no word weights)"
+  },
+  "word_scores": {
+    "call phonetoken": 5.399,
+    "claim": 5.308,
+    "phonetoken": 5.207,
+    "prize": 5.201,
+    "box numtoken": 4.652,
+    "urltoken": 4.652,
+    "tone": 4.652,
+    "have won": 4.627,
+    "numtoken cash": 4.602,
+    "your mobile": 4.602,
+    "phonetoken now": 4.522,
+    "on phonetoken": 4.522,
+    "numtoken prize": 4.494,
+    "guaranteed": 4.465,
+    "to claim": 4.435,
+    "ppm": 4.404,
+    "cs": 4.306,
+    "numtoken ppm": 4.306,
+    "your numtoken": 4.271,
+    "numtoken now": 4.234,
+    "numtoken per": 4.234,
+    "awarded": 4.157,
+    "stop to": 4.157,
+    "tones": 4.157,
+    "or call": 4.157,
+    "pobox": 4.157,
+    "phonetoken from": 4.157,
+    "pobox numtoken": 4.157,
+    "won numtoken": 4.157,
+    "ringtone": 4.117,
+    "phonetoken to": 4.117,
+    "code numtoken": 4.117,
+    "nokia": 4.095,
+    "mobile numtoken": 4.03,
+    "attempt": 4.03,
+    "entry": 4.03,
+    "win numtoken": 3.983,
+    "numtoken msg": 3.934,
+    "landline": 3.934,
+    "cash or": 3.934,
+    "attempt to": 3.883,
+    "mob": 3.883,
+    "cost numtoken": 3.883,
+    "weekly": 3.829,
+    "send stop": 3.829,
+    "phonetoken numtoken": 3.829,
+    "collection": 3.829,
+    "numtoken free": 3.829,
+    "phonetoken or": 3.829,
+    "numtoken urltoken": 3.829,
+    "receive numtoken": 3.772,
+    "guaranteed call": 3.772,
+    "numtoken claim": 3.772,
+    "valid": 3.772,
+    "national": 3.711,
+    "to receive": 3.711,
+    "private": 3.711,
+    "nokia numtoken": 3.711,
+    "optout": 3.711,
+    "bonus": 3.711,
+    "numtoken account": 3.711,
+    "prize guaranteed": 3.711,
+    "sae": 3.711,
+    "expires": 3.711,
+    "camcorder": 3.711,
+    "expires numtoken": 3.647,
+    "shows numtoken": 3.647,
+    "statement for": 3.647,
+    "freemsg": 3.647,
+    "poly": 3.647,
+    "identifier": 3.647,
+    "identifier code": 3.647,
+    "private your": 3.647,
+    "urgent your": 3.647,
+    "valid numtoken": 3.647,
+    "to no": 3.647,
+    "claim numtoken": 3.647,
+    "account statement": 3.647,
+    "phonetoken identifier": 3.647,
+    "uk": 3.613,
+    "suite numtoken": 3.578,
+    "numtoken mths": 3.578,
+    "hl": 3.578,
+    "holiday or": 3.578,
+    "numtoken optout": 3.578,
+    "selected to": 3.578,
+    "co": 3.578,
+    "vouchers": 3.578,
+    "unsubscribe": 3.578,
+    "await collection": 3.578,
+    "numtoken expires": 3.578,
+    "gbp": 3.578,
+    "numtoken award": 3.578,
+    "from landline": 3.578,
+    "nd attempt": 3.578,
+    "national rate": 3.578,
+    "numtoken valid": 3.503,
+    "free entry": 3.503,
+    "numtoken bonus": 3.503,
+    "winner": 3.503,
+    "hrs only": 3.503,
+    "camcorder reply": 3.503,
+    "numtoken weekly": 3.503,
+    "to numtoken": 3.503,
+    "code": 3.464,
+    "caller prize": 3.423,
+    "un redeemed": 3.423,
+    "numtoken new": 3.423,
+    "numtoken wk": 3.423,
+    "ur cash": 3.423,
+    "opt": 3.423,
+    "points call": 3.423,
+    "ppm numtoken": 3.423,
+    "redeemed": 3.423,
+    "redeemed points": 3.423,
+    "now phonetoken": 3.423,
+    "row numtoken": 3.423,
+    "every wk": 3.423,
+    "shows that": 3.423,
+    "rental": 3.423,
+    "nokia to": 3.423,
+    "ur awarded": 3.423,
+    "lands row": 3.423,
+    "tried to": 3.423,
+    "txt stop": 3.423,
+    "tone numtoken": 3.423,
+    "draw shows": 3.423,
+    "claim call": 3.423,
+    "co uk": 3.423,
+    "numtoken anytime": 3.423,
+    "numtoken lands": 3.423,
+    "half price": 3.423,
+    "numtoken un": 3.423,
+    "po box": 3.381,
+    "numtoken stop": 3.336,
+    "wq": 3.336,
+    "numtoken hl": 3.336,
+    "ur mobile": 3.336,
+    "ur mob": 3.336,
+    "help phonetoken": 3.336,
+    "anytime any": 3.336,
+    "any network": 3.336,
+    "prize on": 3.336,
+    "opt out": 3.336,
+    "phone numtoken": 3.336,
+    "charged": 3.336,
+    "the uk": 3.336,
+    "dogging": 3.336,
+    "want new": 3.336,
+    "mins numtoken": 3.336,
+    "land": 3.336,
+    "ltd": 3.336,
+    "land line": 3.336,
+    "new nokia": 3.336,
+    "stop numtoken": 3.336,
+    "network mins": 3.336,
+    "new video": 3.336,
+    "now numtoken": 3.336,
+    "from land": 3.336,
+    "bonus caller": 3.336,
+    "eg": 3.336,
+    "line rental": 3.336,
+    "numtoken wq": 3.336,
+    "operator": 3.336,
+    "to contact": 3.306,
+    "video": 3.306,
+    "award": 3.29,
+    "or numtoken": 3.28,
+    "video phone": 3.241,
+    "just txt": 3.241,
+    "txts": 3.241,
+    "ur numtoken": 3.241,
+    "age numtoken": 3.241,
+    "tones numtoken": 3.241,
+    "call mobileupd": 3.241,
+    "claim code": 3.241,
+    "chat to": 3.241,
+    "dating": 3.241,
+    "wap": 3.241,
+    "custcare": 3.241,
+    "custcare phonetoken": 3.241,
+    "mobileupd": 3.241,
+    "free text": 3.241,
+    "we tried": 3.241,
+    "free numtoken": 3.241,
+    "quiz": 3.241,
+    "awarded numtoken": 3.241,
+    "savamob": 3.241,
+    "numtoken gbp": 3.241,
+    "wk txt": 3.241,
+    "phonetoken for": 3.241,
+    "guaranteed numtoken": 3.241,
+    "line claim": 3.241,
+    "service": 3.216,
+    "please call": 3.19,
+    "txt": 3.19,
+    "ts cs": 3.136,
+    "urgent we": 3.136,
+    "contact you": 3.136,
+    "numtoken xx": 3.136,
+    "gt": -4.583,
+    "lt": -4.575,
+    "lt gt": -4.46,
+    "he": -4.324,
+    "lor": -4.045,
+    "she": -3.866,
+    "later": -3.539,
+    "ask": -3.418,
+    "but": -3.346,
+    "really": -3.338,
+    "say": -3.324,
+    "doing": -3.31,
+    "cos": -3.296,
+    "anything": -3.281,
+    "home": -3.266,
+    "da": -3.259,
+    "said": -3.251,
+    "lol": -3.236,
+    "going to": -3.22,
+    "sure": -3.189,
+    "very": -3.172,
+    "have to": -3.172,
+    "something": -3.172,
+    "come": -3.133,
+    "morning": -3.122,
+    "thing": -3.105,
+    "need to": -3.087,
+    "feel": -3.032,
+    "gonna": -2.993,
+    "amp": -2.933,
+    "dun": -2.933,
+    "much": -2.933,
+    "going": -2.926,
+    "gud": -2.912,
+    "sleep": -2.912,
+    "oh": -2.912,
+    "thk": -2.89,
+    "coming": -2.89,
+    "are you": -2.89,
+    "told": -2.868,
+    "too": -2.868,
+    "didn": -2.868,
+    "my": -2.856,
+    "ok": -2.85,
+    "haha": -2.846,
+    "always": -2.846,
+    "wat": -2.834,
+    "went": -2.823,
+    "way": -2.811,
+    "nice": -2.799,
+    "can you": -2.799,
+    "fine": -2.775,
+    "long": -2.75,
+    "see you": -2.75,
+    "ll": -2.745,
+    "yeah": -2.725,
+    "to go": -2.725,
+    "bit": -2.699,
+    "few": -2.699,
+    "you in": -2.672,
+    "already": -2.659,
+    "how": -2.657,
+    "to come": -2.645,
+    "problem": -2.645,
+    "meeting": -2.645,
+    "at the": -2.645,
+    "lar": -2.645,
+    "lunch": -2.645,
+    "its": -2.623,
+    "thats": -2.617,
+    "having": -2.617,
+    "job": -2.617,
+    "car": -2.617,
+    "eat": -2.617,
+    "yup": -2.617,
+    "finish": -2.588,
+    "did": -2.588,
+    "ah": -2.588,
+    "to me": -2.588,
+    "sorry": -2.578,
+    "might": -2.558,
+    "where": -2.548,
+    "lot": -2.527,
+    "happy": -2.527,
+    "how much": -2.527,
+    "bed": -2.527,
+    "out of": -2.495,
+    "room": -2.495,
+    "shit": -2.495,
+    "princess": -2.495,
+    "dat": -2.495,
+    "jus": -2.495,
+    "liao": -2.495,
+    "got": -2.49,
+    "him": -2.485,
+    "dinner": -2.463,
+    "remember": -2.463,
+    "wont": -2.463,
+    "once": -2.463,
+    "probably": -2.429,
+    "face": -2.429,
+    "early": -2.429,
+    "my love": -2.429,
+    "thanx": -2.429,
+    "anyway": -2.429,
+    "quite": -2.429,
+    "love you": -2.429,
+    "actually": -2.429,
+    "kiss": -2.394,
+    "pay": -2.394,
+    "come to": -2.394,
+    "take care": -2.394,
+    "let me": -2.394,
+    "his": -2.376,
+    "me": -2.361,
+    "me to": -2.357,
+    "dunno": -2.357,
+    "wif": -2.357,
+    "fuck": -2.357,
+    "watch": -2.357,
+    "smile": -2.357,
+    "miss you": -2.357,
+    "leh": -2.357,
+    "left": -2.357,
+    "watching": -2.357,
+    "everything": -2.32,
+    "pa": -2.32,
+    "bus": -2.32,
+    "sweet": -2.32,
+    "shall": -2.32,
+    "den": -2.32,
+    "ll be": -2.32,
+    "well": -2.3,
+    "ya": -2.3,
+    "it": -2.287,
+    "still": -2.28,
+    "times": -2.28,
+    "wanted": -2.28,
+    "give me": -2.28,
+    "aight": -2.28,
+    "do it": -2.28,
+    "dad": -2.28,
+    "hour": -2.28,
+    "guy": -2.28,
+    "tmr": -2.28,
+    "plan": -2.28,
+    "wait": -2.28,
+    "want to": -2.267,
+    "then": -2.245,
+    "so much": -2.24,
+    "you and": -2.24,
+    "those": -2.24,
+    "didnt": -2.24,
+    "forgot": -2.24,
+    "late": -2.219,
+    "that": -2.214,
+    "at home": -2.197,
+    "without": -2.197,
+    "me when": -2.197,
+    "goes": -2.197,
+    "says": -2.197,
+    "me know": -2.197,
+    "abt": -2.197,
+    "til": -2.197,
+    "lei": -2.197,
+    "okay": -2.197,
+    "we re": -2.197,
+    "down": -2.175,
+    "to do": -2.153,
+    "bring": -2.153,
+    "called": -2.153,
+    "school": -2.153,
+    "wake": -2.153,
+    "together": -2.153,
+    "by the": -2.153,
+    "hurt": -2.153,
+    "pain": -2.153,
+    "oso": -2.153,
+    "worry": -2.153,
+    "leave": -2.153,
+    "mail": -2.153,
+    "in my": -2.153,
+    "working": -2.153,
+    "let": -2.137,
+    "same": -2.13,
+    "things": -2.13,
+    "them": -2.122,
+    "think": -2.116,
+    "the same": -2.106,
+    "juz": -2.106,
+    "able": -2.106,
+    "afternoon": -2.106,
+    "making": -2.106,
+    "what time": -2.106,
+    "food": -2.106,
+    "dude": -2.106,
+    "good morning": -2.106,
+    "goin": -2.106,
+    "on my": -2.106,
+    "so": -2.106
+  },
+  "lime_generated": false
+}

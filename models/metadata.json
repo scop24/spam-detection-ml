@@ -1,0 +1,10 @@
+{
+  "winner": "XGBoost",
+  "threshold": 0.805,
+  "winner_cv_pr_auc": 0.9796,
+  "best_params": {
+    "clf__max_depth": 4
+  },
+  "sms_total": 5171,
+  "email_available": true
+}
